@@ -45,10 +45,10 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         className={cn(
           "flex flex-col border transition-all duration-300 w-full max-w-2xl relative overflow-hidden",
-          scrolled
+          scrolled || isOpen
             ? "bg-black/50 border-white/10 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]"
             : "bg-transparent border-transparent",
-          isOpen ? "rounded-2xl bg-black/50 backdrop-blur-lg shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]" : "rounded-[32px]"
+          isOpen ? "rounded-2xl" : "rounded-[32px]"
         )}
       >
         <div className={`flex items-center justify-between w-full px-6 py-3`}>
@@ -136,7 +136,7 @@ export function Navbar() {
           )}
         </AnimatePresence>
 
-        {scrolled && (
+        {scrolled || isOpen && (
           <BorderBeam
             duration={6}
             size={100}
@@ -149,5 +149,3 @@ export function Navbar() {
     </nav>
   );
 }
-
-// ${isOpen ? "border-b-2 border-zinc-900 mb-4" : ""}
