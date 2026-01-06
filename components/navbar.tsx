@@ -40,15 +40,13 @@ export function Navbar() {
     <nav className="fixed top-0 inset-x-0 z-50 flex justify-center p-4">
       <motion.div
         ref={navRef}
-        layout
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className={cn(
-          "flex flex-col border transition-all duration-300 w-full max-w-2xl relative overflow-hidden",
+          "flex flex-col border transition-all rounded-[28px] duration-300 w-full max-w-2xl relative overflow-hidden",
           scrolled || isOpen
             ? "bg-black/50 border-white/10 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]"
             : "bg-transparent border-transparent",
-          isOpen ? "rounded-2xl" : "rounded-[32px]"
         )}
       >
         <div className={`flex items-center justify-between w-full px-6 py-3`}>
@@ -136,13 +134,14 @@ export function Navbar() {
           )}
         </AnimatePresence>
 
-        {scrolled || isOpen && (
+        {(scrolled || isOpen) && (
           <BorderBeam
-            duration={6}
+            duration={4}
             size={100}
             colorFrom="#3b82f6"
             colorTo="#8b5cf6"
             borderWidth={1}
+            className="pointer-events-none"
           />
         )}
       </motion.div>
