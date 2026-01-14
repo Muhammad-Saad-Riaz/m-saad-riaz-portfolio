@@ -4,6 +4,7 @@ import TechStack from "@/components/sections/TechStack";
 import Projects from "@/components/sections/Projects";
 import Image from "next/image";
 import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <TechStack/>
       <Projects/>
       <About/>
+      <Contact/>
     </div>
   );
 }
