@@ -8,12 +8,24 @@ import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <div className="font-sans">
-      <Hero/>
+    <main className="font-sans min-h-screen bg-black text-white selection:bg-blue-500/30">
+      <section id="hero">
+        <Hero/>
+      </section>
+
       <TechStack/>
-      <Projects/>
-      <About/>
-      <Contact/>
-    </div>
+
+      <section id="projects">
+        <Projects/>
+      </section>
+
+      <section id="about">
+        <About/>
+      </section>
+      
+      <section id="contact">
+        <Contact/>
+      </section>
+    </main>
   );
 }
